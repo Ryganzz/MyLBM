@@ -1,0 +1,637 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ==========================================================================
+   1. CSS Variables
+   ========================================================================== */
+:root {
+  --primary-color: #f01e44;
+  --secondary-color: #343a40;
+  --accent-color: #ffc107;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --body-font: "Poppins", sans-serif;
+  --heading-font: "Poppins", sans-serif;
+  --transition-default: all 0.3s ease-in-out;
+  --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --box-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+  /* Social Media Colors */
+  --facebook-color: #1877f2;
+  --instagram-color: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  --tiktok-color: #000000;
+  --tiktok-accent: #25f4ee;
+  --tiktok-pink: #fe2c55;
+}
+
+/* ==========================================================================
+   2. Global Styles & Resets
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition-default);
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+/* ==========================================================================
+   3. Navbar
+   ========================================================================== */
+.navbar {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 1rem 0;
+  transition: var(--transition-default);
+}
+
+/* --- Tambahkan kode ini di bawah style .navbar --- */
+.navbar-logo {
+  width: 40px; /* Ukuran logo di desktop */
+  height: 40px; /* Membuatnya persegi agar bisa dibulatkan */
+  border-radius: 50%; /* Membuat bentuk bulat sempurna */
+  object-fit: cover; /* Memastikan gambar memenuhi area bulat tanpa terdistorsi */
+  vertical-align: middle; /* Menyelaraskan logo dengan teks di sampingnya */
+  margin-right: 10px; /* Memberi jarak antara logo dan teks */
+  border: 2px solid #f8f9fa; /* Border tipis untuk kesan rapi */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus untuk efek kedalaman */
+  transition: var(--transition-default);
+}
+
+/* Efek hover pada logo */
+.navbar-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+/* --- Akhir kode tambahan --- */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary-color) !important;
+}
+
+.navbar-brand img {
+  margin-right: 0.5rem;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: var(--secondary-color) !important;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem !important;
+  border-radius: 5px;
+  position: relative;
+  transition: var(--transition-default);
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color) !important;
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+.navbar-nav .nav-link.active {
+  color: #ffffff !important;
+  background-color: var(--primary-color);
+}
+
+/* Custom Hamburger Menu */
+.navbar-toggler {
+  border: none;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--secondary-color);
+  margin: 5px 0;
+  transition: var(--transition-default);
+  transform-origin: center;
+}
+
+/* Animation for Hamburger to X */
+.navbar-toggler:not(.collapsed) .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.navbar-toggler:not(.collapsed) .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler:not(.collapsed) .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* ==========================================================================
+   4. Hero Section
+   ========================================================================== */
+.hero-section {
+  /* Ganti 'hero-landscape.jpg' dengan nama file gambar Anda */
+  background:
+    linear-gradient(rgba(242, 242, 242, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/hero-landscape1.jpeg");
+
+  /* --- Properti Responsif Gambar --- */
+  background-size: cover; /* Ini kuncinya! Gambar akan menutupi seluruh area. */
+  background-position: center; /* Fokus gambar di tengah, agar yang penting tidak terpotong. */
+  background-repeat: no-repeat; /* Cegah gambar diulang. */
+  background-attachment: fixed; /* Efek parallax (opsional, bisa dihapus jika ingin gambar ikut scroll). */
+
+  color: white;
+  padding: 120px 0; /* Padding atas/bawah untuk memberi ruang pada teks */
+  text-align: center;
+  position: relative;
+
+  /* --- Menjaga Tinggi Minimum --- */
+  min-height: 80vh; /* Hero section setidaknya setinggi 80% dari tinggi layar */
+  display: flex; /* Menggunakan Flexbox untuk menyelaraskan konten */
+  align-items: center; /* Menyelaraskan konten secara vertikal ke tengah */
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-section h1 {
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  animation: fadeInDown 1s ease-out;
+  color: #fff;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  animation: fadeInUp 1s ease-out 0.5s;
+  animation-fill-mode: both;
+}
+
+/* ==========================================================================
+   5. Buttons
+   ========================================================================== */
+.btn {
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  transition: var(--transition-default);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-success {
+  background-color: var(--primary-color);
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+  text-decoration: none;
+  color: #fff;
+}
+
+/* ==========================================================================
+   6. Product Cards
+   ========================================================================== */
+#product-container {
+  margin-top: 2rem;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition-default);
+  background: #fff;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  transition: var(--transition-default);
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--secondary-color);
+}
+
+.card-text {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   7. Search Input
+   ========================================================================== */
+#search-input {
+  border-radius: 50px;
+  border: 2px solid #e9ecef;
+  padding: 0.75rem 1.5rem;
+  transition: var(--transition-default);
+}
+
+#search-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+/* ==========================================================================
+   8. New Footer
+   ========================================================================== */
+.new-footer {
+  background-color: #f45023e9;
+  color: #adb5bd;
+  padding: 4rem 0 1rem;
+  margin-top: 5rem;
+}
+
+.new-footer h5 {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.new-footer p,
+.new-footer ul li a {
+  color: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.new-footer ul li a:hover {
+  color: var(--primary-color);
+  text-decoration: none;
+  padding-left: 5px;
+}
+
+.new-footer .social-links a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.189);
+  border-radius: 50%;
+  margin-right: 10px;
+  color: #ffffff;
+  transition: var(--transition-default);
+}
+
+.new-footer .social-links a:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+/* Social Media Icon Specific Colors */
+.new-footer .social-link.facebook:hover {
+  background-color: var(--facebook-color);
+}
+.new-footer .social-link.instagram:hover {
+  background: var(--instagram-color);
+}
+.new-footer .social-link.tiktok:hover {
+  background-color: var(--tiktok-color);
+}
+.new-footer .social-link.tiktok:hover i {
+  color: var(--tiktok-accent);
+  text-shadow: 0 0 5px var(--tiktok-pink);
+}
+
+.footer-copyright {
+  border-top: 2.5px solid #f7e8a1;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  color: #6c757d;
+}
+
+/* ==========================================================================
+   9. Subscribe Page
+   ========================================================================== */
+#subscribe-info h3 {
+  color: var(--secondary-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+#subscribe-info .alert {
+  border-radius: 10px;
+  border: none;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   10. Animations
+   ========================================================================== */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   11. Responsive Design
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    text-align: center;
+    padding-top: 1rem;
+  }
+  .navbar-nav .nav-link {
+    margin: 0.25rem 0;
+  }
+  .hero-section {
+    padding: 80px 0;
+  }
+  .new-footer {
+    padding: 3rem 0 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  .hero-section p {
+    font-size: 1.1rem;
+  }
+  .new-footer .col-lg-4,
+  .new-footer .col-lg-3,
+  .new-footer .col-lg-2 {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-section {
+    padding: 60px 0;
+  }
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  .display-4 {
+    font-size: 2.5rem;
+  }
+  .card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .navbar-logo {
+    width: 38px;
+    height: 38px;
+    margin-right: 10px;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  .hero-section p {
+    font-size: 1.1rem;
+  }
+  .new-footer .col-lg-4,
+  .new-footer .col-lg-3,
+  .new-footer .col-lg-2 {
+    margin-bottom: 2rem;
+  }
+}
+/* ==========================================================================
+   12. Utility Classes
+   ========================================================================== */
+.text-success-custom {
+  color: var(--primary-color) !important;
+}
+.bg-light-custom {
+  background-color: var(--light-color) !important;
+}
+
+/* ==========================================================================
+    13. Tim Pelayanan
+    ========================================================================== */
+/* assets/css/style.css */
+
+/* ... (kode CSS lama Anda tetap di sini) ... */
+
+/* --- Style untuk Halaman Pelayanan (REVISI) --- */
+
+/* Spasi untuk setiap section baru */
+.service-section {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Style untuk Jadwal Jam Operasional */
+.schedule-card {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+}
+.schedule-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Style untuk Foto Admin di Card (REVISI) */
+.admin-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%; /* Membuat foto bulat */
+  border: 4px solid #f8f9fa;
+}
+
+/* Style untuk Card Admin (REVISI) */
+#admin-container .card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: none;
+}
+
+#admin-container .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+#admin-container .card-title {
+  font-weight: 700;
+}
+
+#admin-container .card-body {
+  padding-bottom: 0.5rem; /* Kurangi padding bawah agar tidak terlalu jarak dengan footer */
+}
+
+#admin-container .card-text {
+  margin-bottom: 0.5rem;
+}
+
+/* Style untuk Badge Kepercayaan */
+.trust-badge {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.trust-badge i {
+  font-size: 1.4rem;
+}
+
+/* Style untuk FAQ Accordion */
+.accordion-button:not(.collapsed) {
+  color: var(--bs-success);
+  background-color: var(--bs-success-bg-subtle);
+}
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+}
+
+/* assets/css/style.css */
+
+/* ... (kode CSS lama Anda tetap di sini) ... */
+
+/* --- Style untuk Galeri Dokumentasi di Halaman Tentang --- */
+.gallery-img {
+  border-radius: 8px;
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* assets/css/style.css */
+
+/* ... (kode CSS lama Anda tetap di sini) ... */
+
+/* --- Style untuk Halaman Alamat --- */
+
+/* Wrapper untuk Iframe Peta */
+.map-wrapper {
+  border-radius: 0.5rem; /* Membuat sudut peta melengkung */
+  overflow: hidden; /* Menyembunyikan bagian iframe yang melampaui sudut melengkung */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Memberikan bayangan agar peta terlihat menonjol */
+}
+
+/* Efek Hover pada Tombol Aksi */
+.btn {
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
