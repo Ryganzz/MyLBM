@@ -129,7 +129,7 @@ const products = [
   {
     id: 11,
     name: "Salak pondoh",
-    image: "assets/images/buah/Salak-pondoh.jpeg",
+    image: "assets/images/buah/Salak-pondo.jpeg",
     description: "Salak pondoh segar dari Pekanbaru, manis dan lezat.",
     stock: 50,
     priceOptions: {
