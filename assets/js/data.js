@@ -45,7 +45,7 @@ const products = [
   {
     id: 4,
     name: "Alpukad Mentega",
-    image: "assets/images/buah/alpukad-mentega.jpg",
+    image: "assets/images/buah/alpukad-mentega.jpeg",
     description: "Alpukad mentega manis dan lezat, cocok untuk camilan sehat.",
     stock: 25,
     priceOptions: {
@@ -73,7 +73,7 @@ const products = [
   {
     id: 6,
     name: "Stroberi",
-    image: "assets/images/buah/stroberi.jpg",
+    image: "assets/images/buah/Stroberi-pack1.jpeg",
     description: "Stroberi segar dan manis, cocok untuk camilan sehat.",
     stock: 25,
     priceOptions: {
@@ -87,7 +87,7 @@ const products = [
   {
     id: 7,
     name: "Pisang Sunpride",
-    image: "assets/images/buah/pisang-sunpride.jpg",
+    image: "assets/images/buah/pisang-sunpride.jpeg",
     description: "Pisang Sunpride manis dan lezat, cocok untuk camilan sehat.",
     stock: 50,
     priceOptions: {
