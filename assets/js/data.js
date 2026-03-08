@@ -98,6 +98,20 @@ const products = [
       hargaOpsional: null,
     },
   },
+  {
+    id: 8,
+    name: "Semangka",
+    image: "assets/images/buah/semangka1.jpeg",
+    description: "Semangka segar dari Pekanbaru, manis dan merah.",
+    stock: 50,
+    priceOptions: {
+      perKg: 80000,
+      perPack: null,
+      perSisir: null,
+      opsional: null,
+      hargaOpsional: null,
+    },
+  },
 ];
 
 //-----------------------------------------------------------------------------------------------//
