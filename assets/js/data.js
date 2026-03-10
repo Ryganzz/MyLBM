@@ -49,7 +49,7 @@ const products = [
     description: "Alpukad mentega manis dan lezat, cocok untuk camilan sehat.",
     stock: 25,
     priceOptions: {
-      perKg: 35000,
+      perKg: 40000,
       perPack: null,
       perSisir: null,
       opsional: null,
