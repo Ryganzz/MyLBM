@@ -209,7 +209,10 @@
           </div>
           <div class="col-lg-3 col-md-6 mb-4">
             <h5 class="text-uppercase">Manajer Utama</h5>
-            <p class="mb-1">-Nanda Prayogi <br>Bertanggung jawab terhadap pengelolaan dan pengembangan ladang buah Medan.</p>
+            <p class="mb-1">
+              -Nanda Prayogi <br />Bertanggung jawab terhadap pengelolaan dan
+              pengembangan ladang buah Medan.
+            </p>
           </div>
         </div>
       </div>
@@ -227,77 +230,84 @@
     <script src="assets/js/data.js"></script>
     <script src="assets/js/app.js"></script>
 
-       <!-- --- JAVASCRIPT BARU UNTUK INTERAKSI --- -->
+    <!-- --- JAVASCRIPT BARU UNTUK INTERAKSI --- -->
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
         // GANTI 'LINK_FORMSPREE_ANDA' dengan URL Anda
-        const FORMSPREE_URL = 'https://formspree.io/f/mjgakzpa';
-        
-        const form = document.getElementById('subscribe-form');
-        const alertContainer = document.getElementById('alert-container');
-        const submitButton = document.getElementById('subscribe-button');
-        const buttonText = document.getElementById('button-text');
-        const buttonSpinner = document.getElementById('button-spinner');
+        const FORMSPREE_URL = "https://formspree.io/f/mjgakzpa";
 
-        form.addEventListener('submit', async function(e) {
+        const form = document.getElementById("subscribe-form");
+        const alertContainer = document.getElementById("alert-container");
+        const submitButton = document.getElementById("subscribe-button");
+        const buttonText = document.getElementById("button-text");
+        const buttonSpinner = document.getElementById("button-spinner");
+
+        form.addEventListener("submit", async function (e) {
           e.preventDefault();
 
           setLoadingState(true);
           const formData = new FormData(form);
-          
+
           try {
             const response = await fetch(FORMSPREE_URL, {
-              method: 'POST',
+              method: "POST",
               body: formData,
               headers: {
-                'Accept': 'application/json'
-              }
+                Accept: "application/json",
+              },
             });
 
             if (response.ok) {
               // --- PESAN SUKSES YANG DIPERBARUI ---
-              showAlert('Terima kasih! Kami telah mengirimkan email verifikasi. Silakan periksa inbox Anda.', 'success');
+              showAlert(
+                "Terima kasih! Kami telah mengirimkan email verifikasi. Silakan periksa inbox Anda.",
+                "success",
+              );
               form.reset();
             } else {
-              showAlert('Oops! Terjadi kesalahan. Silakan coba lagi.', 'error');
+              showAlert("Oops! Terjadi kesalahan. Silakan coba lagi.", "error");
             }
           } catch (error) {
-            showAlert('Oops! Tidak dapat terhubung. Silakan coba lagi.', 'error');
+            showAlert(
+              "Oops! Tidak dapat terhubung. Silakan coba lagi.",
+              "error",
+            );
           } finally {
             setLoadingState(false);
           }
         });
 
         function showAlert(message, type) {
-          const alertElement = document.createElement('div');
+          const alertElement = document.createElement("div");
           alertElement.className = `custom-alert ${type}`;
           alertElement.innerHTML = `
             <span>${message}</span>
             <button class="alert-close-btn">&times;</button>
           `;
-          
+
           alertContainer.appendChild(alertElement);
           const removeAlert = () => {
-            alertElement.style.opacity = '0';
+            alertElement.style.opacity = "0";
             setTimeout(() => alertElement.remove(), 300);
           };
-          alertElement.querySelector('.alert-close-btn').addEventListener('click', removeAlert);
+          alertElement
+            .querySelector(".alert-close-btn")
+            .addEventListener("click", removeAlert);
           setTimeout(removeAlert, 5000);
         }
 
         function setLoadingState(isLoading) {
           if (isLoading) {
             submitButton.disabled = true;
-            buttonText.classList.add('d-none');
-            buttonSpinner.classList.remove('d-none');
+            buttonText.classList.add("d-none");
+            buttonSpinner.classList.remove("d-none");
           } else {
             submitButton.disabled = false;
-            buttonText.classList.remove('d-none');
-            buttonSpinner.classList.add('d-none');
+            buttonText.classList.remove("d-none");
+            buttonSpinner.classList.add("d-none");
           }
         }
       });
     </script>
-    
   </body>
 </html>

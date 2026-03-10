@@ -45,7 +45,7 @@ const products = [
   {
     id: 4,
     name: "Alpukad Mentega",
-    image: "assets/images/buah/alpukad-mentega.jpeg",
+    image: "assets/images/buah/Alpukad-mentega.jpeg",
     description: "Alpukad mentega manis dan lezat, cocok untuk camilan sehat.",
     stock: 25,
     priceOptions: {
