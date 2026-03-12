@@ -177,44 +177,44 @@ const products = [
 // Data admin untuk halaman pelayanan
 const admins = [
   {
-    name: "John Doe",
+    name: "Admin Pelayanan1",
     role: "Stok & Harga",
     photo: "assets/images/team/AdminPelayanan1.png", // Ganti dengan foto admin Anda
     description:
       "Cocok untuk menanyakan stok terbaru, harga harian, dan estimasi berat buah.",
-    whatsapp: "628123456789",
+    whatsapp: "6281228417537",
   },
   {
-    name: "Kurniawan",
+    name: "Admin Pelayanan2",
     role: "Konsultasi Buah",
     photo: "assets/images/team/AdminPelayanan2.png", // Ganti dengan foto admin Anda
     description:
       "Hubungi jika merasa tidak sesuai dengan produk yang diterima, atau ingin konsultasi tentang buah yang anda.",
-    whatsapp: "628987654321",
+    whatsapp: "6287769010742",
   },
   {
-    name: "Admin Pengiriman1.png",
-    role: "Pengiriman & Pemesanan",
+    name: "Admin Pelayanan3",
+    role: "Pemesanan Partai Besar",
     photo: "assets/images/team/AdminPengiriman1.png", // Ganti dengan foto admin Anda
     description:
-      "Hubungi jika ada pertanyaan seputar status pengiriman atau resi pesanan Anda.",
-    whatsapp: "628112233445",
+      "Hubungi jika ingin memesan dalam jumlah besar untuk acara, bisnis, MBG, layanan catering, atau kebutuhan khusus Lainnya.",
+    whatsapp: "6289531696683",
   },
   {
-    name: "Admin Ahmad",
-    role: "Konsultasi Buah",
+    name: "Admin Business",
+    role: "Konsultasi Kerja sama",
     photo: "assets/images/team/AdminStock1.png", // Ganti dengan foto admin Anda
     description:
-      "Bingung mau pilih buah apa? Tanyakan saja rasa, tekstur, atau rekomendasi buah musiman.",
-    whatsapp: "628554433221",
+      "Hubungi untuk konsultasi kerja sama bisnis, penawaran khusus, atau peluang kemitraan dengan kami.",
+    whatsapp: "6285167743885",
   },
 ];
 //-----------------------------------------------------------------------------------------------//
 // Info Subscribe
 const discountInfo = {
-  title: "Dapatkan Penawaran Spesial!",
+  title: "Dapatkan penawaran dari kami sob!",
   description:
-    "Daftarkan email Anda untuk mendapatkan informasi stok terbaru, diskon eksklusif, dan tips seputar buah-buahan langsung dari kami.",
+    "Daftarkan email kamu untuk mendapatkan informasi stok terbaru, diskon eksklusif, dan tips seputar buah-buahan langsung dari kami.",
   currentOffer:
     "Penawaran Hari Ini: Beli Apel Malang 5kg, gratis 1kg! Hubungi admin kami sekarang.",
 };
